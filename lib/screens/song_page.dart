@@ -62,10 +62,13 @@ class _SongPageState extends State<SongPage> with TickerProviderStateMixin {
       for (int i = 0; i < lyricsList.length; i++) {
         lyricsTexts.add(Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Container(
-            child: Text(
-              lyricsList.elementAt(i),
-              style: TextStyle(fontSize: 15),
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              child: Text(
+                lyricsList.elementAt(i),
+                style: TextStyle(fontSize: 15),
+              ),
             ),
           ),
         ));
@@ -445,7 +448,12 @@ class _SongPageState extends State<SongPage> with TickerProviderStateMixin {
                     ? //Lyrics
                     Expanded(
                         child: SingleChildScrollView(
-                          child: Column(children: lyricsTexts),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: Column(
+                              children: lyricsTexts,
+                            ),
+                          ),
                         ),
                       )
                     : // Comment
@@ -458,12 +466,6 @@ class _SongPageState extends State<SongPage> with TickerProviderStateMixin {
                                   List<String> commentSplit = song!.comment!
                                       .elementAt(index)
                                       .split('%%');
-                                  //shorten the name, avoid exceeding boundary
-                                  if (commentSplit[1].length > 13) {
-                                    commentSplit[1] =
-                                        commentSplit[1].substring(0, 13) +
-                                            '...';
-                                  }
                                   return Column(
                                     children: [
                                       Padding(
@@ -474,7 +476,7 @@ class _SongPageState extends State<SongPage> with TickerProviderStateMixin {
                                                 CrossAxisAlignment.center,
                                             children: [
                                               //User Name
-                                              Container(
+                                              Flexible(
                                                 child: Text(
                                                   commentSplit.elementAt(1),
                                                   style: (commentSplit
@@ -482,10 +484,15 @@ class _SongPageState extends State<SongPage> with TickerProviderStateMixin {
                                                                   1)[0] ==
                                                           '❆')
                                                       ? TextStyle(
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
                                                           fontSize: 20,
                                                           color:
                                                               theme_light_blue)
-                                                      : TextStyle(fontSize: 20),
+                                                      : TextStyle(
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
+                                                          fontSize: 20),
                                                 ),
                                               ),
                                               SizedBox(width: 5),

@@ -41,10 +41,16 @@ class _ProfilePageState extends State<ProfilePage> {
                 TextButton(
                     onPressed: () {
                       if (true) {
-                        setState(() {
-                          MiyukiUser.editUserName(nameController.text);
-                          InitData.miyukiUser.name = nameController.text;
-                        });
+                        if (nameController.text != '') {
+                          setState(() {
+                            MiyukiUser.editUserName(nameController.text);
+                            InitData.miyukiUser.name = nameController.text;
+                          });
+                        } else {
+                          const snackBar =
+                              SnackBar(content: Text('Please type your name'));
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        }
                       } else {
                         const snackBar =
                             SnackBar(content: Text('No Wifi Connection'));

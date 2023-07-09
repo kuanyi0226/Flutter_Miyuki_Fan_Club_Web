@@ -334,8 +334,14 @@ Widget buildMessage(Message message) {
           child: Text(
             messageName,
             style: (message.userName![0] == '❆')
-                ? TextStyle(fontSize: 20, color: theme_light_blue)
-                : TextStyle(fontSize: 20),
+                ? TextStyle(
+                    fontSize: 20,
+                    color: theme_light_blue,
+                    overflow: TextOverflow.ellipsis)
+                : TextStyle(
+                    fontSize: 20,
+                    overflow: TextOverflow.ellipsis,
+                  ),
           ),
         ),
         SizedBox(width: 5),
