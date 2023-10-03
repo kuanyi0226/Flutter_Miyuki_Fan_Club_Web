@@ -29,7 +29,7 @@ class MiyukiUser {
   static Future createUser(
       {required String name, required String email}) async {
     MiyukiUser user =
-        MiyukiUser(name: name, email: email, vip: false, coin: 250);
+        MiyukiUser(name: name, email: email, vip: false, coin: 1223);
     Map<String, dynamic> userData = user.toJson();
     await FirebaseFirestore.instance
         .collection('miyukiusers')
