@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_bg_null_safety/flutter_weather_bg.dart';
+import 'package:yuki_club_web/screens/concert_page.dart';
+import 'package:yuki_club_web/screens/public_chat_room_page.dart';
+import 'package:yuki_club_web/screens/yakai/yakai_page.dart';
 import '../class/MiyukiUser.dart';
 import '../class/Song.dart';
 import '../materials/InitData.dart';
@@ -12,7 +15,6 @@ import '../services/yukicoin_service.dart';
 import './home_drawer_page.dart';
 
 import '../class/Message.dart';
-import '../materials/MyText.dart';
 import '../materials/colors.dart';
 
 import '../services/message_service.dart';
@@ -78,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             //send message
                             final text = controller1.text;
                             MessageService().createMessage(
+                              target_to_send: 'message-board',
                               text: text,
                               currMessage: currentMessage,
                               senderImgUrl: (InitData.miyukiUser.imgUrl != null)
@@ -124,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           centerTitle: true,
           title: Padding(
-            padding: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.only(top: 2),
             child: Image.asset(
               'assets/images/yuki_club.png',
               width: 170,
@@ -200,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               }
                             },
                             child: Text(
-                              '今日の曲：${InitData.todaySong}',
+                              '今日の曲：${InitData.todaySong.replaceAll('_', ' ')}',
                               style: TextStyle(
                                   fontSize: 20,
                                   decoration: TextDecoration.underline),
@@ -210,7 +213,41 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     },
                   ),
-
+                  SizedBox(height: 10),
+                  //Function Buttons
+                  Row(
+                    children: [
+                      //Public Chat Room
+                      FilledButton.tonal(
+                        //style: ButtonStyle(backgroundColor: ),
+                        child: Text("Chat Room"),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => PublicChatRoomPage()));
+                        },
+                      ),
+                      SizedBox(width: 10),
+                      //Public Chat Room
+                      FilledButton.tonal(
+                        //style: ButtonStyle(backgroundColor: ),
+                        child: Text("Concert"),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ConcertPage()));
+                        },
+                      ),
+                      SizedBox(width: 10),
+                      //Public Chat Room
+                      FilledButton.tonal(
+                        //style: ButtonStyle(backgroundColor: ),
+                        child: Text("Yakai"),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => YakaiPage()));
+                        },
+                      ),
+                    ],
+                  ),
                   SizedBox(height: 10),
                   //Message Board
                   Container(
@@ -277,7 +314,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           );
                         }
                       },
-                      stream: MessageService().readMessages(),
+                      stream: MessageService()
+                          .readMessages(target_to_read: 'message-board'),
                     ),
                   ),
                 ],
@@ -358,7 +396,7 @@ Widget buildMessage(Message message) {
           child: Padding(
             padding: const EdgeInsets.only(top: 5),
             child: Text(
-                '${message.sentTime.timeZoneName}: ${message.sentTime.year}/${message.sentTime.month}/${message.sentTime.day} ${message.sentTime.hour}:${message.sentTime.minute}',
+                '${message.sentTime.year}/${message.sentTime.month}/${message.sentTime.day} ${message.sentTime.hour}:${message.sentTime.minute}',
                 style: TextStyle(fontSize: 10)),
           ),
         ),
