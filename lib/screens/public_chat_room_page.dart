@@ -8,7 +8,6 @@ import '../class/Song.dart';
 import '../materials/InitData.dart';
 import '../screens/song_page.dart';
 import '../services/chatroom_service.dart';
-import 'package:provider/provider.dart';
 import '../materials/colors.dart';
 
 class PublicChatRoomPage extends StatefulWidget {
@@ -47,9 +46,7 @@ class _PublicChatRoomPage extends State<PublicChatRoomPage>
           _text_controller1.text = '';
           //FocusScope.of(context).unfocus();
           SchedulerBinding.instance.addPostFrameCallback((_) {
-            _scrollController.jumpTo(
-              _scrollController.position.maxScrollExtent + 10000,
-            );
+            _scrollController.jumpTo(100000000);
           });
         } catch (e) {
           print(e.toString());
@@ -116,10 +113,7 @@ class _PublicChatRoomPage extends State<PublicChatRoomPage>
                                 );
                                 SchedulerBinding.instance
                                     .addPostFrameCallback((_) {
-                                  _scrollController.jumpTo(
-                                    _scrollController.position.maxScrollExtent +
-                                        10000,
-                                  );
+                                  _scrollController.jumpTo(100000000);
                                 });
                               } else {
                                 snackBarString = 'No Wifi Connection';
@@ -177,9 +171,7 @@ class _PublicChatRoomPage extends State<PublicChatRoomPage>
                       if (_firstTimeLoad == true) {
                         _firstTimeLoad = false;
                         SchedulerBinding.instance.addPostFrameCallback((_) {
-                          _scrollController.jumpTo(
-                            _scrollController.position.maxScrollExtent + 10000,
-                          );
+                          _scrollController.jumpTo(100000000);
                         });
                       }
 
