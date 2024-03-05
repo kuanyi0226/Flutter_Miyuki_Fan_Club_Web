@@ -1,9 +1,14 @@
+import 'package:yuki_club_web/class/Yuki_Sekai/PlayerInfo.dart';
+import 'package:yuki_club_web/services/Yuki_Sekai/YukiSekai.dart';
+
 import '../class/MiyukiUser.dart';
 
 class InitData {
   static MiyukiUser miyukiUser =
       MiyukiUser(name: 'No Name', email: 'No data', vip: false);
   static String todaySong = 'No Song';
+  static YukiSekai yukiSekai = YukiSekai();
+  static List<PlayerInfo> playersInfo = [];
 
   //const
   static List<String> YAKAIS = [
@@ -57,6 +62,7 @@ class InitData {
     'LOVERS_ONLY',
     'MEGAMI',
     'MERRY-GO-ROUND',
+    'MUGO・ん…色っぽい',
     'Maybe',
     'NEVER_CRY_OVER_SPILT_MILK',
     'NIGHT_WING',
@@ -89,6 +95,7 @@ class InitData {
     'あのさよならにさよならを',
     'あのバスに',
     'あの人に似ている',
+    'あの人は船乗り',
     'あの娘',
     'あばうとに行きます',
     'あばよ',
@@ -116,6 +123,7 @@ class InitData {
     'きつねの嫁入り',
     'くらやみ乙女',
     'こどもの宝',
+    'こぬか雨',
     'この世に二人だけ',
     'この思いに偽りはなく',
     'この空を飛べたら',
@@ -160,6 +168,7 @@ class InitData {
     'ふたつの炎',
     'ふたりは',
     'ふらふら',
+    'ふられた気分',
     'ほうせんか',
     'ほうやれほ',
     'まつりばやし',
@@ -174,6 +183,7 @@ class InitData {
     'らいしょらいしょ',
     'りばいばる',
     'わかれうた',
+    'わすれ鳥のうた',
     'わたしの子供になりなさい',
     'アイス・フィッシュ',
     'アザミ嬢のララバイ',
@@ -187,6 +197,7 @@ class InitData {
     'カーニヴァルだったね',
     'キツネ狩りの歌',
     'ギヴ・アンド・テイク',
+    'クリスマスソングを唄うように',
     'クレンジング_クリーム',
     'グッバイガール',
     'コマーシャル',
@@ -363,8 +374,10 @@ class InitData {
     '川の音が聞こえる',
     '川風',
     '市場は眠らない',
+    '帰っておいで',
     '帰れない者たちへ',
     '帰省',
+    '帰郷(ききょう)',
     '帰郷群',
     '帳簿(詩篇)',
     '常夜灯',
@@ -433,6 +446,7 @@ class InitData {
     '旅人のうた',
     '旅人よ我に帰れ',
     '旅支度なされませ',
+    '明日_靴がかわいたら',
     '明日なき我等',
     '昔々あるところに',
     '昔から雨が降ってくる',
@@ -534,6 +548,8 @@ class InitData {
     '産声',
     '田舎のネズミ(詩篇)',
     '男の仕事',
+    '町へお帰り',
+    '町へ帰れば',
     '異国',
     '異国の女',
     '疑えばきりがない',
@@ -614,6 +630,7 @@ class InitData {
     '誰かが私を憎んでいる',
     '誰だってナイフになれる',
     '誰のせいでもない雨が',
+    '誰ひとりわたしを知らない',
     '謎な女',
     '谷地眼(詩篇)',
     '負けんもんね',

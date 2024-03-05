@@ -1,9 +1,12 @@
-const CURR_VERSION = 'V1.1.0';
+const CURR_VERSION = 'V1.2.1';
 const APPNAME_EN = 'YUKI CLUB';
 const APPNAME_JP = '雪クラブ';
 
 const UPDATE_CONTENT = [
-  '--V1.1.0-- 2023/11/20\nnew: Chat Room System, optimization, remove home Ad banner',
+  '--V1.2.1-- 2024/03/06\nnew: Yuki World-New Costume, fix: Yuki World- fix multiplayer fatal bugs',
+  '--V1.2.0-- 2024/03/04\nnew: 雪の世界Yuki World, fix: optimization',
+  '--V1.1.1-- 2024/01/24\nnew: 歌会 VOL.1 Set List, fix: 夜会工場Set List',
+  '--V1.1.0-- 2023/11/20\nnew: Chat Room System, fix: optimization, remove home Ad banner',
   '--V1.0.3-- 2023/10/04\nfix: change logo, optimization',
   '--V1.0.2-- 2023/7/06\nfix: optimization',
   '--V1.0.1-- 2023/7/06\nfix: optimization',

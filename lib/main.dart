@@ -13,6 +13,7 @@ Future main() async {
       messagingSenderId: '',
       projectId: 'miyuki-b1c80',
       storageBucket: 'miyuki-b1c80.appspot.com',
+      databaseURL: 'https://miyuki-b1c80-default-rtdb.firebaseio.com',
     ),
   );
   runApp(const MyApp());

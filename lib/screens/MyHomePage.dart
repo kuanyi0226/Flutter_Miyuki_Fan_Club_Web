@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_bg_null_safety/flutter_weather_bg.dart';
+import 'package:yuki_club_web/screens/Yuki_Sekai/yuki_sekai_page.dart';
 import 'package:yuki_club_web/screens/concert_page.dart';
 import 'package:yuki_club_web/screens/public_chat_room_page.dart';
 import 'package:yuki_club_web/screens/yakai/yakai_page.dart';
@@ -215,38 +216,53 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   SizedBox(height: 10),
                   //Function Buttons
-                  Row(
-                    children: [
-                      //Public Chat Room
-                      FilledButton.tonal(
-                        //style: ButtonStyle(backgroundColor: ),
-                        child: Text("Chat Room"),
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PublicChatRoomPage()));
-                        },
-                      ),
-                      SizedBox(width: 10),
-                      //Public Chat Room
-                      FilledButton.tonal(
-                        //style: ButtonStyle(backgroundColor: ),
-                        child: Text("Concert"),
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ConcertPage()));
-                        },
-                      ),
-                      SizedBox(width: 10),
-                      //Public Chat Room
-                      FilledButton.tonal(
-                        //style: ButtonStyle(backgroundColor: ),
-                        child: Text("Yakai"),
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => YakaiPage()));
-                        },
-                      ),
-                    ],
+                  Container(
+                    height: 40,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        //Public Chat Room
+                        FilledButton.tonal(
+                          //style: ButtonStyle(backgroundColor: ),
+                          child: Text("Chat Room"),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PublicChatRoomPage()));
+                          },
+                        ),
+                        SizedBox(width: 5),
+                        //Concert
+                        FilledButton.tonal(
+                          //style: ButtonStyle(backgroundColor: ),
+                          child: Text("Concert"),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ConcertPage()));
+                          },
+                        ),
+                        SizedBox(width: 5),
+                        //Yakai
+                        FilledButton.tonal(
+                          //style: ButtonStyle(backgroundColor: ),
+                          child: Text("Yakai"),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => YakaiPage()));
+                          },
+                        ),
+                        SizedBox(width: 5),
+                        //Yuki World
+                        FilledButton.tonal(
+                          //style: ButtonStyle(backgroundColor: ),
+                          child: Text("Yuki World"),
+                          onPressed: () async {
+                            //PlayerInfo.deleteAllPlayers();
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => YukiSekaiPage()));
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(height: 10),
                   //Message Board
