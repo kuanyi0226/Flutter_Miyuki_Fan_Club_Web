@@ -42,6 +42,9 @@ dependencies:
   animated_background: ^2.0.0
   flutter_inappwebview: ^5.7.2+3
   dropdown_search: ^5.0.6
+
+  #flutter build web --release --web-renderer canvaskit
+  #flutter run -d chrome --web-renderer canvaskit
   flame: ^1.9.1
   flame_tiled: ^1.14.1
   
