@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.1.0-163.1.beta <4.0.0'
+  sdk: '>=3.0.5 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -57,7 +57,7 @@ dependencies:
   google_sign_in: ^5.4.2
   google_sign_in_web: ^0.10.0
   firebase_database: ^10.4.0
-  firebase_database_web: ^0.2.3+16
+  #firebase_database_web: ^0.2.3+16
 
   #play video
   video_player: ^2.6.1

@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:yuki_club_web/MyApp.dart';
 
 import 'package:yuki_club_web/main.dart';
 

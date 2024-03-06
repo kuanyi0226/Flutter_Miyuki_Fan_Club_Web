@@ -5,6 +5,7 @@ import 'package:flutter/src/services/keyboard_key.g.dart';
 import 'package:flutter/src/services/raw_keyboard.dart';
 import 'package:flutter/services.dart';
 import 'package:yuki_club_web/class/Yuki_Sekai/PlayerInfo.dart';
+import 'package:yuki_club_web/materials/InitData.dart';
 import 'package:yuki_club_web/services/Yuki_Sekai/YukiSekai.dart';
 import '../../../services/Yuki_Sekai/yuki_sekai_service.dart';
 import '../../Yuki_Sekai/components/collision_block.dart';
@@ -151,28 +152,7 @@ class Player extends SpriteAnimationGroupComponent
 
     current = playerState;
     //update to realtime database
-    if (current == PlayerState.idle) {
-      //init is falling
-      if (!isIdle || velocity.y != 0) {
-        isIdle = true;
-        PlayerInfo.updatePlayer(
-            //costume: costume,
-            x: position.x,
-            y: position.y,
-            velocityX: velocity.x,
-            velocityY: velocity.y,
-            state: current.toString());
-      }
-    } else {
-      isIdle = false;
-      PlayerInfo.updatePlayer(
-          //costume: costume,
-          x: position.x,
-          y: position.y,
-          velocityX: velocity.x,
-          velocityY: velocity.y,
-          state: current.toString());
-    }
+    _updateInfoToDatabase();
   }
 
   void _checkHorizontalCollisions() {
@@ -233,5 +213,32 @@ class Player extends SpriteAnimationGroupComponent
     velocity.y += _gravity;
     velocity.y = velocity.y.clamp(-_jumpForce, _terminalVelocity);
     position.y += velocity.y * dt;
+  }
+
+  void _updateInfoToDatabase() {
+    if (InitData.isInSekai) {
+      if (current == PlayerState.idle) {
+        //init is falling
+        if (!isIdle || velocity.y != 0) {
+          isIdle = true;
+          PlayerInfo.updatePlayer(
+              //costume: costume,
+              x: position.x,
+              y: position.y,
+              velocityX: velocity.x,
+              velocityY: velocity.y,
+              state: current.toString());
+        }
+      } else {
+        isIdle = false;
+        PlayerInfo.updatePlayer(
+            //costume: costume,
+            x: position.x,
+            y: position.y,
+            velocityX: velocity.x,
+            velocityY: velocity.y,
+            state: current.toString());
+      }
+    }
   }
 }
