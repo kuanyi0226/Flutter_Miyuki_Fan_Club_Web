@@ -67,7 +67,7 @@ class _PublicChatRoomPage extends State<PublicChatRoomPage>
         context: context,
         builder: (context) => AlertDialog(
               title: Text(
-                '曲を共有する\nShare a song',
+                '曲をシェアする\nShare a song',
                 style: TextStyle(color: theme_purple, fontSize: 20),
               ),
               content: Text('曲を選択してください\nChoose a song from the list'),
