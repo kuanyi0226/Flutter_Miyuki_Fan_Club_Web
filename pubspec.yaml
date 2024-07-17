@@ -72,9 +72,9 @@ dependencies:
   image_picker: ^0.8.7+1
   image: ^3.2.2
   exif: ^3.1.4
-
+  image_network: ^1.0.0
   #load and display html
-  webview_flutter: ^2.0.12
+  webview_flutter: ^3.0.0
 
   #change package name for release
   change_app_package_name: ^1.0.0

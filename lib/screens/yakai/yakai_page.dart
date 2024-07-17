@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_network/image_network.dart';
 import '../../class/MyDecoder.dart';
 import '../../materials/InitData.dart';
 import '../../screens/yakai/yakai_songlist_page.dart';
@@ -25,10 +26,17 @@ class _PageState extends State<YakaiPage> {
                   builder: (context) => YakaiSonglistPage(
                         yakai_year: curr_yakai_year,
                       ))),
-              leading: Image.network(
-                'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/Yakai/${curr_yakai_year.substring(1)}_0/poster.jpg',
-                scale: 2.5,
+              leading: ImageNetwork(
+                image:
+                    'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/Yakai/${curr_yakai_year.substring(1)}_0/poster.jpg',
+                width: 40,
+                height: 40,
+                duration: 0,
               ),
+              // Image.network(
+              //   'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/Yakai/${curr_yakai_year.substring(1)}_0/poster.jpg',
+              //   scale: 2.5,
+              // ),
               title: Text(
                 MyDecoder.yearToConcertName(curr_yakai_year),
                 style: TextStyle(fontSize: 21),

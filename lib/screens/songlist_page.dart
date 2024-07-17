@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yuki_club_web/services/string_service.dart';
 import '../class/Song.dart';
-
+import 'package:image_network/image_network.dart';
 import '../class/Concert.dart';
 import '../materials/colors.dart';
 
@@ -51,10 +51,16 @@ class _PageState extends State<SonglistPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         //Image
-                        Image.network(
-                          'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/${concert_type}/${concert!.year}_${concert!.year_index}/poster.png',
-                          fit: BoxFit.contain,
+                        ImageNetwork(
+                          image:
+                              'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/${concert_type}/${concert!.year}_${concert!.year_index}/poster.png',
+                          width: 85,
+                          height: 85,
                         ),
+                        // Image.network(
+                        //   'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/${concert_type}/${concert!.year}_${concert!.year_index}/poster.png',
+                        //   fit: BoxFit.contain,
+                        // ),
                         //Text(Introductions)
                         Padding(
                           padding: const EdgeInsets.only(

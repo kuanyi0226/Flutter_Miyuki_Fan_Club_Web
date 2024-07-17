@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_network/image_network.dart';
 import 'package:yuki_club_web/services/string_service.dart';
 import '../../class/Concert.dart';
 import '../../class/MyDecoder.dart';
@@ -54,10 +55,16 @@ class _YakaiSonglistPageState extends State<YakaiSonglistPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         //Image
-                        Image.network(
-                          'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/Yakai/${yakai_year.substring(1)}_0/poster.jpg',
-                          fit: BoxFit.contain,
+                        ImageNetwork(
+                          image:
+                              'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/Yakai/${yakai_year.substring(1)}_0/poster.jpg',
+                          width: 85,
+                          height: 85,
                         ),
+                        // Image.network(
+                        //   'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/Yakai/${yakai_year.substring(1)}_0/poster.jpg',
+                        //   fit: BoxFit.contain,
+                        // ),
                         //Text(Introductions)
                         Padding(
                           padding: const EdgeInsets.only(

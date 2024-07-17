@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:image_network/image_network.dart';
 
 import '../class/Concert.dart';
 import './songlist_page.dart';
@@ -58,9 +59,12 @@ Widget buildConcert(Concert concert, BuildContext context) => ListTile(
                 concert: concert,
                 concert_type: "Concert",
               ))),
-      leading: Image.network(
-        'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/Concert/${concert.year}_${concert.year_index}/poster.png',
-        scale: 2.3,
+      leading: ImageNetwork(
+        image:
+            'https://github.com/kuanyi0226/Yuki_DataBase/raw/main/Image/Concert/${concert.year}_${concert.year_index}/poster.png',
+        width: 40,
+        height: 40,
+        duration: 0,
       ),
       title: Text(
         concert.name,

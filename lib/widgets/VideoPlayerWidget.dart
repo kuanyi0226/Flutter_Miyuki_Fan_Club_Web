@@ -24,7 +24,7 @@ class VideoPlayerWidget extends StatelessWidget {
               ),
             );
   Widget buildVideo() => Container(
-        constraints: BoxConstraints(maxHeight: 550),
+        constraints: BoxConstraints(maxHeight: 280), //550
         child: Stack(
           children: [
             buildVideoPlayer(),
