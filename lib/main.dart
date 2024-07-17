@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:yuki_club_web/materials/colors.dart';
 
 import './MyApp.dart';
 
@@ -16,5 +18,33 @@ Future main() async {
       databaseURL: 'https://miyuki-b1c80-default-rtdb.firebaseio.com',
     ),
   );
-  runApp(const MyApp());
+  final runnableApp = _buildRunnableApp(
+    isWeb: kIsWeb,
+    webAppWidth: 700.0,
+    app: const MyApp(),
+  );
+
+  runApp(runnableApp);
+}
+
+Widget _buildRunnableApp({
+  required bool isWeb,
+  required double webAppWidth,
+  required Widget app,
+}) {
+  if (!isWeb) {
+    return app;
+  }
+
+  return Container(
+    color: theme_purple,
+    child: Center(
+      child: ClipRect(
+        child: SizedBox(
+          width: webAppWidth,
+          child: app,
+        ),
+      ),
+    ),
+  );
 }

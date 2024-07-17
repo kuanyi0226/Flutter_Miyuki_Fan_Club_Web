@@ -1,0 +1,30 @@
+{
+    "language": "English",
+    "@language": {
+        "description": "The current language"
+    },
+    "yakai": "Yakai",
+    "concert": "Concert",
+    "chat_room": "Chat\nRoom",
+    "yuki_world": "Yuki\nWorld",
+    "message_board": "Message Board(type here...)",
+    "account": "Account",
+    "forgot_password": "Forgot Password",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "or": "Or",
+    "not_a_member": "Not a member?",
+    "sign_up": "Sign Up",
+    "user_name": "User Name(Nickname)",
+    "password_type_again": "Type the password again",
+    "already_have_account": "Already have an account?",
+    "sign_up_warning": "If you have any concerns about personal info,\nplease use fake info",
+    "type_username": "Please type your username",
+    "password_length_error": "Passwords has to be at least 6 letters",
+    "password_not_match": "Passwords don't match!",
+    "home": "Home",
+    "lives": "Lives",
+    "lyrics": "Lyrics",
+    "comment": "Comment"
+}

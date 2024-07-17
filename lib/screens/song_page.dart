@@ -1,13 +1,11 @@
 import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:yuki_club_web/services/string_service.dart';
 import '../class/MiyukiUser.dart';
 import '../materials/InitData.dart';
 import '../screens/yakai/yakai_songlist_page.dart';
 import '../services/report_service.dart';
-import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../class/Concert.dart';
 import '../services/custom_search_delegate.dart';
 import './songlist_page.dart';
@@ -561,11 +559,18 @@ class _SongPageState extends State<SongPage> with TickerProviderStateMixin {
         fixedColor: theme_purple,
         currentIndex: _curr_index,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month), label: 'Lives'),
-          BottomNavigationBarItem(icon: Icon(Icons.lyrics), label: 'Lyrics'),
-          BottomNavigationBarItem(icon: Icon(Icons.comment), label: 'Comment'),
+              icon: Icon(Icons.home),
+              label: AppLocalizations.of(context)!.home),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month),
+              label: AppLocalizations.of(context)!.lives),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.lyrics),
+              label: AppLocalizations.of(context)!.lyrics),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.comment),
+              label: AppLocalizations.of(context)!.comment),
         ],
         onTap: (idx) => _onTap(idx),
       ),

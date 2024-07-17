@@ -32,10 +32,12 @@ dependencies:
     sdk: flutter
   url_launcher: ^6.1.5
   internet_connection_checker: ^0.0.1+4
-  intl: ^0.18.1
   provider: ^6.0.3
   get: ^4.6.5
   http: ^1.1.0
+  flutter_localizations: 
+    sdk: flutter
+  intl: ^0.18.0
 
   #decoration
   flutter_weather_bg_null_safety: ^1.0.0
@@ -119,7 +121,8 @@ flutter_icons: #change the app logo
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  #multi-language
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

@@ -12,7 +12,7 @@ import '../screens/song_page.dart';
 import '../services/custom_search_delegate.dart';
 import '../services/random_song_service.dart';
 import '../services/yukicoin_service.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import './home_drawer_page.dart';
 
 import '../class/Message.dart';
@@ -224,7 +224,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         //Public Chat Room
                         FilledButton.tonal(
                           //style: ButtonStyle(backgroundColor: ),
-                          child: Text("Chat\nRoom"),
+                          child: Text(AppLocalizations.of(context)!.chat_room),
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => PublicChatRoomPage()));
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         //Concert
                         FilledButton.tonal(
                           //style: ButtonStyle(backgroundColor: ),
-                          child: Text("Concert"),
+                          child: Text(AppLocalizations.of(context)!.concert),
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => ConcertPage()));
@@ -244,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         //Yakai
                         FilledButton.tonal(
                           //style: ButtonStyle(backgroundColor: ),
-                          child: Text("Yakai"),
+                          child: Text(AppLocalizations.of(context)!.yakai),
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => YakaiPage()));
@@ -254,7 +254,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         //Yuki World
                         FilledButton.tonal(
                           //style: ButtonStyle(backgroundColor: ),
-                          child: Text("Yuki\nWorld"),
+                          child: Text(AppLocalizations.of(context)!.yuki_world),
                           onPressed: () async {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => YukiSekaiPage()));
@@ -297,7 +297,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: TextField(
                             controller: controller1,
                             decoration: InputDecoration.collapsed(
-                                hintText: '伝言板 Message Board'),
+                                hintText: AppLocalizations.of(context)!
+                                    .message_board),
                           ),
                         ),
                         //sent message
